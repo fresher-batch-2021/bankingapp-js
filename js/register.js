@@ -8,7 +8,7 @@
 
 function register() {
     event.preventDefault();
-    alert("works");
+    
     const userName=document.querySelector("#name").value;
     const email = document.querySelector("#email").value;
     const userPassword = document.querySelector("#password").value;
@@ -25,7 +25,6 @@ function register() {
         //Validate Form Fields...
 
         Validator.isValidEmail(email, "Email Cannot be Blank");
-    
         Validator.isValidPassword(userPassword, "Password must contain atleast 8 Characters");
         Validator.isValidPassword(confirmPassword, "Password must contain atleast 8 Characters");
 
@@ -38,7 +37,8 @@ function register() {
         let formData = {
             email: email,
             password: userPassword,
-            role: "USER"
+            role: "USER",
+            donorStatus: "Active"
         };
         console.log(formData);
 
@@ -53,7 +53,7 @@ function register() {
                 }, 1000)
             } else {
 
-                alert("hi");
+             
                 UserService.register(formData).then(res => {
                     let data = res.data;
                     console.log(data);

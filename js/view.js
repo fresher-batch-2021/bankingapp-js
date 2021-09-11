@@ -1,15 +1,15 @@
-const param=new URLSearchParams(window.location.search.substr(1));
-let Id=param.get('id');
- 
-    donateBloodService.getDonner(Id).then(res=>{
-        console.table(res.data)
-        let data=res.data;
+const param = new URLSearchParams(window.location.search.substr(1));
+let Id = param.get('id');
 
-        let image=`
+donateBloodService.getDonner(Id).then(res => {
+    console.table(res.data)
+    let data = res.data;
+
+    let image = `
         
         
         `
-        let content=`
+    let content = `
         <table>
 
         <caption></caption>
@@ -19,10 +19,7 @@ let Id=param.get('id');
             <td>${data.name}</td>
         </tr>
 
-        <tr>
-            <th scope="col">Address : </th>
-            <td>1/1 Anna Avenue Street</td>
-        </tr>
+        
 
         <tr>
             <th scope="col">Phone : </th>
@@ -38,43 +35,17 @@ let Id=param.get('id');
             <th scope="col">Location : </th>
             <td>${data.city}</td>
         </tr>
+        <tr>
+        
+        <td><button><a href="edit.html?id=${data._id}&rev=${data._rev}">Update</a></button></td>
+        </tr>
 
     </table>
 
         `;
-        document.querySelector('.bill-details').innerHTML=content;
-        // document.querySelector('.topnav').innerHTML=image;   
-        
-    })
- 
+    document.querySelector('.bill-details').innerHTML = content;
 
-//     <table>
 
-//     <caption></caption>
+})
 
-//     <tr>
-//         <th scope="col">Name : </th>
-//         <td>Sudharsanan</td>
-//     </tr>
 
-//     <tr>
-//         <th scope="col">Address : </th>
-//         <td>1/1 Anna Avenue Street</td>
-//     </tr>
-
-//     <tr>
-//         <th scope="col">Phone : </th>
-//         <td>7339471597</td>
-//     </tr>
-
-//     <tr>
-//         <th scope="col">Blood Group : </th>
-//         <td>B+</td>
-//     </tr>
-
-//     <tr>
-//         <th scope="col">Location : </th>
-//         <td>Kanchipuram</td>
-//     </tr>
-
-// </table>

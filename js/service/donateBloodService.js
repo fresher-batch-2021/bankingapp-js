@@ -10,4 +10,7 @@ class donateBloodService{
     static getDonner(id){
         return RestService.getDataByID('bloodbank-blooddonate',id);
     }
+    static updateDonner(id){
+        return RestService.getDataByID('bloodbank-blooddonate',id);
+    }
 }

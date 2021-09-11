@@ -60,7 +60,8 @@ function bloodrequest() {
             name: requestname,
             bloodtype: requestblood,
             phonenumber : requestphonenumber,
-            city : requestbloodcity
+            city : requestbloodcity,
+            status:"OPEN"
         };
 
         RequestBloodService.addBloodRequest(formData).then(res=>{
