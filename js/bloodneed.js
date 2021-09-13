@@ -1,6 +1,6 @@
 // Getting Value From Data Base (Blood Request)
 
-function bloodneed(){
+function bloodNeed(){
 
     let url ="https://fffdcced-9a09-44ae-aa2f-e27add7efeb7-bluemix.cloudantnosqldb.appdomain.cloud/bloodbank-bloodrequest/_all_docs?include_docs=true";
 
@@ -29,8 +29,8 @@ function bloodneed(){
         `<tr>
         <td>${i}</td>
         <td>${task.name}</td>
-        <td>${task.bloodtype}</td>
-        <td>${task.phonenumber}</td>
+        <td>${task.bloodType}</td>
+        <td>${task.phoneNumber}</td>
         <td>${task.city}</td>
         </tr>`;
 
@@ -46,4 +46,4 @@ function bloodneed(){
 
 // Calling the function
 
-bloodneed()
+bloodNeed()

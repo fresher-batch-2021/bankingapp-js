@@ -1,7 +1,7 @@
 const param = new URLSearchParams(window.location.search.substr(1));
 let Id = param.get('id');
 
-donateBloodService.getDonner(Id).then(res => {
+donateBloodService.getDonor(Id).then(res => {
     console.table(res.data)
     let data = res.data;
 
@@ -23,12 +23,12 @@ donateBloodService.getDonner(Id).then(res => {
 
         <tr>
             <th scope="col">Phone : </th>
-            <td>${data.phonenumber}</td>
+            <td>${data.phoneNumber}</td>
         </tr>
 
         <tr>
             <th scope="col">Blood Group : </th>
-            <td>${data.bloodtype}</td>
+            <td>${data.bloodType}</td>
         </tr>
 
         <tr>

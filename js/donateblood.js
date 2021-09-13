@@ -1,23 +1,22 @@
-function donateblood(){
+function donateBlood() {
 
     event.preventDefault();
-    const imageUrl=document.getElementById("imageUrl").value;
-    const imageUrlFilePath =imageUrl.substring(imageUrl.lastIndexOf("\\")+1);
-    alert(imageUrlFilePath)
-    const donatebloodname = document.getElementById("name").value;
-    const donatebloodgroup = document.getElementById("bloodgroup").value;
-    const donatephonenumber = document.getElementById("phoneNumber").value;
-    const donatecity = document.getElementById("city").value;
+    const imageUrl = document.getElementById("imageUrl").value;
+    const imageUrlFilePath = imageUrl.substring(imageUrl.lastIndexOf("\\") + 1);
+    const donateBloodName = document.getElementById("name").value;
+    const donateBloodGroup = document.getElementById("bloodGroup").value;
+    const donatePhoneNumber = document.getElementById("phoneNumber").value;
+    const donateCity = document.getElementById("city").value;
 
 
     let datas = {
-        "name" : donatebloodname,
-        "bloodgroup" : donatebloodgroup
+        "name": donateBloodName,
+        "bloodGroup": donateBloodGroup
     }
 
     console.log(datas);
 
-    if(donatebloodname == "" || donatebloodname == null){
+    if (donateBloodName == "" || donateBloodName == null) {
 
         alert("Enter Your Name");
 
@@ -25,7 +24,7 @@ function donateblood(){
 
     }
 
-    if(donatebloodgroup == "" || donatebloodgroup == null){
+    if (donateBloodGroup == "" || donateBloodGroup == null) {
 
         alert("Enter Your Blood Group");
 
@@ -33,7 +32,7 @@ function donateblood(){
 
     }
 
-    if(donatephonenumber == "" || donatephonenumber == null){
+    if (donatePhoneNumber == "" || donatePhoneNumber == null) {
 
         alert("Enter Your Phone Number");
 
@@ -41,7 +40,7 @@ function donateblood(){
 
     }
 
-    if(donatecity == "" || donatecity == null){
+    if (donateCity == "" || donateCity == null) {
 
         alert("Enter Your City");
 
@@ -49,19 +48,19 @@ function donateblood(){
 
     }
 
-    else{
+    else {
 
         console.log(datas);
 
         let formData = {
-            imageUrl:imageUrlFilePath,
-            name: donatebloodname,
-            bloodtype: donatebloodgroup,
-            phonenumber : donatephonenumber,
-            city : donatecity
+            imageUrl: imageUrlFilePath,
+            name: donateBloodName,
+            bloodType: donateBloodGroup,
+            phoneNumber: donatePhoneNumber,
+            city: donateCity
         };
-        donateBloodService.addBloodDonner(formData).then(res=>{
-            window.location.href="available.html"
+        donateBloodService.addBloodDonor(formData).then(res => {
+            window.location.href = "available.html"
         })
 
     }

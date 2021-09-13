@@ -1,20 +1,20 @@
-function bloodrequest() {
+function bloodRequest() {
 
     event.preventDefault();
 
-    var requestname = document.getElementById("name").value;
-    var requestblood = document.getElementById("bloodgroup").value;
-    var requestphonenumber = document.getElementById("phoneNumber").value;
-    var requestbloodcity = document.getElementById("city").value;
+    var requestName = document.getElementById("name").value;
+    var requestBlood = document.getElementById("bloodGroup").value;
+    var requestPhoneNumber = document.getElementById("phoneNumber").value;
+    var requestBloodCity = document.getElementById("city").value;
 
     let datas = {
-        "name": requestname,
-        "blood": requestblood
+        "name": requestName,
+        "blood": requestBlood
     }
 
     console.log(datas);
 
-    if (requestname == "" || requestname == null) {
+    if (requestName == "" || requestName == null) {
 
         alert("Enter Your Name");
 
@@ -22,7 +22,7 @@ function bloodrequest() {
 
     }
 
-    if (requestblood == "" || requestblood == null) {
+    if (requestBlood == "" || requestBlood == null) {
 
         alert("Enter Your Blood Group");
 
@@ -30,7 +30,7 @@ function bloodrequest() {
 
     }
 
-    if(requestphonenumber == "" || requestphonenumber == null){
+    if(requestPhoneNumber == "" || requestPhoneNumber == null){
 
         alert("Enter Your Phone Number");
 
@@ -38,7 +38,7 @@ function bloodrequest() {
 
     }
 
-    if(requestbloodcity == "" || requestbloodcity == null){
+    if(requestBloodCity == "" || requestBloodCity == null){
 
         alert("Enter Your City");
 
@@ -57,10 +57,10 @@ function bloodrequest() {
          console.log(datas);
 
         let formData = {
-            name: requestname,
-            bloodtype: requestblood,
-            phonenumber : requestphonenumber,
-            city : requestbloodcity,
+            name: requestName,
+            bloodType: requestBlood,
+            phoneNumber : requestPhoneNumber,
+            city : requestBloodCity,
             status:"OPEN"
         };
 

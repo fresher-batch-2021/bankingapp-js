@@ -1,6 +1,6 @@
-function availableblood() {
+function availableBlood() {
 
-    donateBloodService.getAllBloodDonner().then(res => {
+    donateBloodService.getAllBloodDonor().then(res => {
 
         let data = res.data.rows;
         const users = data.map(obj => obj.doc);
@@ -9,7 +9,7 @@ function availableblood() {
         for (let task of users) {
 
             // Cards Items
-alert(task.imageUrl)
+// alert(task.imageUrl)
             content +=
                 `
         <div class="card">
@@ -19,8 +19,8 @@ alert(task.imageUrl)
             <div class="Blood-details">
                
                 <h4 >${task.name}</h4>                
-                <h5>Blood Group : ${task.bloodtype}</h5>  
-                <h5>Phone : ${task.phonenumber}</h5>
+                <h5>Blood Group : ${task.bloodType}</h5>  
+                <h5>Phone : ${task.phoneNumber}</h5>
                 <a href="View.html?id=${task._id}"><button>View</button></a>
 
             </div>
@@ -37,4 +37,4 @@ alert(task.imageUrl)
 
 // Calling the function
 
-availableblood()
+availableBlood()

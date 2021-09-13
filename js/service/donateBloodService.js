@@ -1,16 +1,16 @@
 class donateBloodService{
     
-  static  addBloodDonner(donnerObj){
-        return RestService.addData('bloodbank-blooddonate',donnerObj);
+  static  addBloodDonor(donorObj){
+        return RestService.addData('bloodbank-blooddonate',donorObj);
     }
 
-    static getAllBloodDonner(){
+    static getAllBloodDonor(){
         return RestService.getAllData('bloodbank-blooddonate');
     }
-    static getDonner(id){
+    static getDonor(id){
         return RestService.getDataByID('bloodbank-blooddonate',id);
     }
-    static updateDonner(id){
+    static updateDonor(id){
         return RestService.getDataByID('bloodbank-blooddonate',id);
     }
 }
