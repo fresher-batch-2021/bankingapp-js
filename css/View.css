@@ -74,7 +74,9 @@
 
   /* ********************bill cards******************* */
 
+
   .bill{
+    border: 2px solid red;
     position: relative;
     background-color: white;
     padding: 300px;
@@ -83,15 +85,25 @@
     margin-right: 200px;
     margin-left: 200px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    background-image: url(assets/image/menimagenew1.jpg);
+    background-image: url(image/menimagenew1.jpg);
     background-size: 30%;
     background-repeat: no-repeat;
     background-position-x: 10%;
     background-position-y: 50%;
   }
 
+  .donorImage img{
+    position: absolute;  
+    width: 30%;
+    height: 80%;
+    top: 10%;
+    left: 5%;
+    border: 2px solid cornsilk;
+  }
+
   .bill-details{
     /* border: 1px solid red; */
+
     position: absolute;
     margin-left: 55px;
     margin-bottom: 70px;

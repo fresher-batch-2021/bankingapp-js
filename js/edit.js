@@ -12,6 +12,16 @@ axios.get(url, { headers: { 'Authorization': basicAuth } }).then(res => {
     // donateBloodService.getDonor(id).then(res => {
     console.log(res.data)
     const details = res.data
+
+localStorage.setItem('donarDetails',JSON.stringify(details.imageUrl))
+    let image = `
+    <figure>
+     <img id="imgDonor" src="image/${details.imageUrl}" alt="">
+    </figure>`;
+
+
+    document.querySelector(".donorImage").innerHTML=image;
+
     document.querySelector("#name").value = details.name;
     document.querySelector("#phoneNumber").value = details.phoneNumber;
     document.querySelector("#bloodType").value = details.bloodType;
@@ -32,18 +42,22 @@ function updateBloodDonor(id, rev) {
     console.log(rev);
     console.log(id);
 
-    let bloodDonorName = document.querySelector("#name").value;
-    let bloodDonorContact = document.querySelector("#phoneNumber").value;
-    let bloodDonorBLoodType = document.querySelector("#bloodType").value;
-    let bloodDonorCity = document.querySelector("#city").value;
+
+    
+    const bloodDonorName = document.querySelector("#name").value;
+    const bloodDonorContact = document.querySelector("#phoneNumber").value;
+    const bloodDonorBloodType = document.querySelector("#bloodType").value;
+    const bloodDonorCity = document.querySelector("#city").value;
+    const imageUrl =JSON.parse(localStorage.getItem('donarDetails'));
 
 
     let updateDonorObj = {
         _id:id,
         _rev:rev,
+       imageUrl: imageUrl,
         name: bloodDonorName,
         phoneNumber: bloodDonorContact,
-        bloodType: bloodDonorBLoodType,
+        bloodType: bloodDonorBloodType,
         city: bloodDonorCity
     }
     console.log("Obj", updateDonorObj);
@@ -54,8 +68,7 @@ function updateBloodDonor(id, rev) {
         alert("successfull");
         
         window.location.href = `Available.html`;
-        alert(id)
-        alert('hi')
+        
     }).catch(err =>{alert("error ")}    
 
     );

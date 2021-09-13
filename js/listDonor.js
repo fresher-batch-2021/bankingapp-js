@@ -23,17 +23,12 @@ function displayTasks(tableData) {
             <td>${taskObj.doc.email}</td>
             <td>${taskObj.doc.role}</td>
             <td>${taskObj.doc.donorStatus}</td>
-            
-       
-
-            <td><button type='button' onclick="updateStatus('${taskObj.doc._id}','ACTIVE')">Active
-                </button>&nbsp;&nbsp;&nbsp;<button type='button' onclick="updateStatus('${taskObj.doc._id}','INACTIVE')">Inactive</button></td>
+    
+            <td>
+            <button type='button' onclick="updateStatus('${taskObj.doc._id}','ACTIVE')">Active</button>
+            <button type='button' onclick="updateStatus('${taskObj.doc._id}','INACTIVE')">Inactive</button>
+            </td>
                 
-                
-
-
-
-
             </tr>`;
         document.querySelector("#bloodDonorTable").innerHTML = content;
     }
