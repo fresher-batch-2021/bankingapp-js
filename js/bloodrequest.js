@@ -11,9 +11,13 @@ function bloodRequest() {
         "name": requestName,
         "blood": requestBlood
     }
+    
 
-    console.log(datas);
+   
 
+   
+
+    
     if (requestName == "" || requestName == null) {
 
         alert("Enter Your Name");
@@ -22,7 +26,7 @@ function bloodRequest() {
 
     }
 
-    if (requestBlood == "" || requestBlood == null) {
+    if (requestBlood == "Enter Blood Group" || requestBlood == null) {
 
         alert("Enter Your Blood Group");
 
@@ -72,5 +76,12 @@ function bloodRequest() {
     
 
     }
+
+} catch (err) {
+    console.error(err.message);
+    alert("Unable to Login");
+    toastr.error(err.message);
+
+  }
 
 }

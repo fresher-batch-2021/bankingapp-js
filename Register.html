@@ -81,19 +81,20 @@
 
             <div class="name">
 
-                <input type="name" id="name" placeholder="Name" name="name" autocomplete="off" autofocus>
+                <input type="name" id="name" placeholder="Name" name="name"  autocomplete="off" autofocus>
 
             </div>
 
             <div class="email">
 
-                <input type="email" id="email" placeholder="Email" name="email" autocomplete="off" autofocus>
+                <input type="email" id="email" placeholder="Email" name="email"pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Email must end with @gmail.com" required autocomplete="off" autofocus>
 
             </div>
 
             <div class="password">
 
-                <input type="password" id="password" placeholder="Password" name="password" autocomplete="off"
+                <input type="password" id="password" placeholder="Password" name="password" required pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}"
+                title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" autocomplete="off"
                     autofocus>
 
             </div>

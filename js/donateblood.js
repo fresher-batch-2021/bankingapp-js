@@ -24,7 +24,7 @@ function donateBlood() {
 
     }
 
-    if (donateBloodGroup == "" || donateBloodGroup == null) {
+    if (donateBloodGroup == "Enter Blood Group" || donateBloodGroup == null) {
 
         alert("Enter Your Blood Group");
 

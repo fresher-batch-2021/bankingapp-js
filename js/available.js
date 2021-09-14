@@ -32,7 +32,7 @@ function availableBlood() {
         for (let task of users) {
 
             // Cards Items
-// alert(task.imageUrl)
+
             content +=userTemplate(task)
 
         }

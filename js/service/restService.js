@@ -33,4 +33,13 @@ static deleteData(database,id,rev)
 
 }
 
+static findData(database,selectorObj,fieldArray){
+    const url=endpoint+database+"/_find";
+    const requestData={
+        selector:selectorObj,
+        fields:fieldArray
+    };
+    return axios.post(url,requestData,authentication)
+}
+
 }
