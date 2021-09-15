@@ -38,7 +38,7 @@ function register() {
             email: email,
             password: userPassword,
             role: "USER",
-            donorStatus: "Active"
+            donorStatus: "ACTIVE"
         };
         console.log(formData);
 
@@ -47,7 +47,7 @@ function register() {
             console.log(res);
             if (data != null) {
 
-                toastr.error("This email Id is already exists");
+                toastr.error(Mail_Already_Exist);
                 setTimeout(function () {
 
                 }, 1000)
@@ -66,7 +66,8 @@ function register() {
 
                 }).catch(err => {
                     toastr.error(err.message);
-                    toastr.error("Unable to register");
+                    // toastr.error("Unable to register");
+                    toastr.error(Unable_To_Register)
                 });
 
             }

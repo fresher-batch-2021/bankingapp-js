@@ -14,14 +14,23 @@ axios.get(url, { headers: { 'Authorization': basicAuth } }).then(res => {
     console.log(res.data)
     const details = res.data
 
-localStorage.setItem('donarDetails',JSON.stringify(details.imageUrl))
+    localStorage.setItem('donarDetails', JSON.stringify(details.imageUrl))
     let image = `
 
     <figure>
      <img id="imgDonor" src="image/${details.imageUrl}" alt="">
     </figure>`;
 
-    document.querySelector(".donorImage").innerHTML=image;
+    document.querySelector(".donorImage").innerHTML = image;
+
+    //$("donorImage").html(image);
+
+    // $("#name").val(details.name);
+    // $("#phonenumber").val(details.phoneNumber);
+    // $("#bloodtype").val(details.bloodtype);
+    // $("#city").val(details.city);   
+
+
     document.querySelector("#name").value = details.name;
     document.querySelector("#phoneNumber").value = details.phoneNumber;
     document.querySelector("#bloodType").value = details.bloodType;
@@ -29,6 +38,8 @@ localStorage.setItem('donarDetails',JSON.stringify(details.imageUrl))
 
     let content = `<button onclick="updateBloodDonor('${id}','${rev}')">update</button> `;
     document.querySelector("#btn").innerHTML = content;
+
+    //$("#btn").html(content);
 })
     .catch(err => console.error(err));
 
@@ -38,7 +49,7 @@ function updateBloodDonor(id, rev) {
     const queryString = window.location.search;
     console.log(queryString);
     const urlParams = new URLSearchParams(queryString);
-   
+
     console.log(rev);
     console.log(id);
 
@@ -47,19 +58,19 @@ function updateBloodDonor(id, rev) {
     // const bloodDonorContact=$("#phoneNumber").val;
     // const bloodDonorBloodType=$("#bloodType").val;
     // const bloodDonorcity=$("#city").val;
-    
+
 
     const bloodDonorName = document.querySelector("#name").value;
     const bloodDonorContact = document.querySelector("#phoneNumber").value;
     const bloodDonorBloodType = document.querySelector("#bloodType").value;
     const bloodDonorCity = document.querySelector("#city").value;
-    const imageUrl =JSON.parse(localStorage.getItem('donarDetails'));
+    const imageUrl = JSON.parse(localStorage.getItem('donarDetails'));
 
 
     let updateDonorObj = {
-        _id:id,
-        _rev:rev,
-       imageUrl: imageUrl,
+        _id: id,
+        _rev: rev,
+        imageUrl: imageUrl,
         name: bloodDonorName,
         phoneNumber: bloodDonorContact,
         bloodType: bloodDonorBloodType,
@@ -68,15 +79,16 @@ function updateBloodDonor(id, rev) {
     console.log("Obj", updateDonorObj);
 
     update.updateDonor(id, rev, updateDonorObj).then(res => {
-        
+
         Toastr.success("Successfully Updated");
         setTimeout(function () {
             window.location.href = `Available.html`;
         }, 1000);
-        
-        
-        
-    }).catch(err =>{
-        Toastr.error("error ")
+
+
+
+    }).catch(err => {
+        // Toastr.error("error ")
+        toastr.error(Failed);
     });
 }

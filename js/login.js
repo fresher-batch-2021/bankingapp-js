@@ -24,45 +24,47 @@ function login() {
     };
     console.log(userObj);
     UserService.login(email, password).then(res => {
-      let data = res.data.docs[0];
+      let data = res.data.docs;
       console.log(data);
 
 
-      if (data.role == "ADMIN") {
-        toastr.success("", "Login successful", {
-        });
-        console.log("Toastr completed");
-        setTimeout(function () {
-          localStorage.setItem("userData", JSON.stringify(data));
-          window.location.href = "admin.html"
-        }, 1000);
+      if (data.length == 0) {
+        toastr.error(Invalid_Login_Credentials);
+
+      } else {
+        let user = data[0];
+        console.log(user);
+
+        if (user.role == "ADMIN") {
+          toastr.success("", "Login successful", {
+          });
+          console.log("Toastr completed");
+          setTimeout(function () {
+            localStorage.setItem("userData", JSON.stringify(user));
+            window.location.href = "admin.html"
+          }, 1000);
+        }
+        else if (user.role == "USER" && user.donorStatus == "INACTIVE") {
+          alert("else works");
+          // toastr.error("Your Account is Blocked"); 
+          toastr.error(User_Account_Blocked);
+          setTimeout(function () {
+            // localStorage.setItem("userData", JSON.stringify(data));
+            // window.location.href = "index.html"
+          }, 3000);
+
+        }
+        else if (user.role == "USER" && user.donorStatus == "ACTIVE") {
+          toastr.success("Login Successful");
+          setTimeout(function () {
+            localStorage.setItem("userData", JSON.stringify(user));
+            window.location.href = "index.html"
+          }, 1000);
+
+        }
+
       }
 
-      else if ( data.role == "USER" && data.donorStatus == "Inactive") {
-        alert("else works");
-        toastr.error("Your Account is Blocked");
-        setTimeout(function () {
-          // localStorage.setItem("userData", JSON.stringify(data));
-          // window.location.href = "index.html"
-        }, 3000);
-
-      }
-
-      else if (data.role == "USER" && data.donorStatus == "Active") {
-        toastr.success("Login Successful");
-        setTimeout(function () {
-          localStorage.setItem("userData", JSON.stringify(data));
-          window.location.href = "index.html"
-        }, 1000);
-
-      }
-
-
-
-      else if (data.length == 0) {
-        toastr.error("Invalid Login Credentials");
-        setTimeout(function () { }, 1000)
-      }
 
 
 

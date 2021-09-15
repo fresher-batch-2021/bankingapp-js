@@ -39,6 +39,8 @@ function bloodNeed(){
     console.log(content);
 
     document.querySelector("#task_table").innerHTML = content; 
+
+    //$("#task_table").html(content);
      
     })
 

@@ -1,3 +1,10 @@
+
+// $(document).ready(function(){
+//     $("#bloodRequest").submit(bloodRequest);
+// });
+
+
+
 function bloodRequest() {
 
     event.preventDefault();
@@ -84,7 +91,8 @@ function bloodRequest() {
 } catch (err) {
     console.error(err.message);
     toastr.error(err.message);
-    toastr.error("Failed");
+    // toastr.error("Failed");
+    toastr.error(Failed);
   }
 
 }

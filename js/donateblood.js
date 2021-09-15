@@ -1,3 +1,10 @@
+
+// $(document).ready(function(){
+//     $("#donateBlood").submit(donateBlood);
+// });
+
+
+
 function donateBlood() {
 
     event.preventDefault();
@@ -81,7 +88,8 @@ function donateBlood() {
     catch (err) {
         console.error(err.message);
         toastr.error(err.message);
-        toastr.error("Failed");
+        // toastr.error("Failed");
+        toastr.erro(Failed);
     };
 
 }

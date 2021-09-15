@@ -8,7 +8,6 @@ UserService.userList().then(res => {
 }).catch(err => {
     let errorMessage = err;
     console.error(errorMessage);
-    // console.log("failed");
     toastr.error("Error-" + errorMessage);
 });
 

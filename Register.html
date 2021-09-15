@@ -93,7 +93,7 @@
 
             <div class="password">
 
-                <input type="password" id="password" placeholder="Password" name="password" required pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}"
+                <input type="password" id="password" placeholder="Password" name="password" required pattern="[a-zA-z0-9]{8,}"
                 title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" autocomplete="off"
                     autofocus>
 
@@ -134,6 +134,7 @@
     </div>
 
     <script src="js/register.js"></script>
+    <script src="js/errorMessage.js"></script>
     <script src="js/validator.js"></script>
     <script src="js/emailValidator.js"></script>
     <script src="js/service.js"></script>

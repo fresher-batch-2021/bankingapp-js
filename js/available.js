@@ -38,6 +38,8 @@ function availableBlood() {
         }
 
         document.querySelector('.database_data').innerHTML = content;
+        
+        //$(".database_data").html(content);
 
     })
 
@@ -73,6 +75,10 @@ donateBloodService.getAllBloodDonor().then(res => {
     }
 
     document.querySelector('.database_data').innerHTML = content;
+
+    // $(".database_data").html(content);
+
+
 
 })
 
