@@ -4,6 +4,7 @@ const urlParams = new URLSearchParams(queryString);
 const id = urlParams.get('id');
 const rev = urlParams.get('rev');
 console.log(id);
+
 const dbUserName = "apikey-v2-zyhv5j7i61imeby1qya0ma2ejrc0fkf9n4e4bl3w5gn";
 const dbPassword = "ec6094ae0714dc7a5ffc50a86924bef3";
 const basicAuth = 'Basic ' + btoa(dbUserName + ':' + dbPassword);
@@ -15,17 +16,17 @@ axios.get(url, { headers: { 'Authorization': basicAuth } }).then(res => {
 
 localStorage.setItem('donarDetails',JSON.stringify(details.imageUrl))
     let image = `
+
     <figure>
      <img id="imgDonor" src="image/${details.imageUrl}" alt="">
     </figure>`;
 
-
     document.querySelector(".donorImage").innerHTML=image;
-
     document.querySelector("#name").value = details.name;
     document.querySelector("#phoneNumber").value = details.phoneNumber;
     document.querySelector("#bloodType").value = details.bloodType;
     document.querySelector("#city").value = details.city;
+
     let content = `<button onclick="updateBloodDonor('${id}','${rev}')">update</button> `;
     document.querySelector("#btn").innerHTML = content;
 })
@@ -37,13 +38,17 @@ function updateBloodDonor(id, rev) {
     const queryString = window.location.search;
     console.log(queryString);
     const urlParams = new URLSearchParams(queryString);
-    //const id = urlParams.get('id');
-    //const rev = urlParams.get('rev')
+   
     console.log(rev);
     console.log(id);
 
 
+    // const bloodDonorName=$("#name").val;
+    // const bloodDonorContact=$("#phoneNumber").val;
+    // const bloodDonorBloodType=$("#bloodType").val;
+    // const bloodDonorcity=$("#city").val;
     
+
     const bloodDonorName = document.querySelector("#name").value;
     const bloodDonorContact = document.querySelector("#phoneNumber").value;
     const bloodDonorBloodType = document.querySelector("#bloodType").value;
@@ -61,15 +66,17 @@ function updateBloodDonor(id, rev) {
         city: bloodDonorCity
     }
     console.log("Obj", updateDonorObj);
-    alert("success");
-    update.updateDonor(id, rev, updateDonorObj).then(res => {
-        // alert(res.data._id)
-        // console.table(res.data._id);
-        alert("successfull");
-        
-        window.location.href = `Available.html`;
-        
-    }).catch(err =>{alert("error ")}    
 
-    );
+    update.updateDonor(id, rev, updateDonorObj).then(res => {
+        
+        Toastr.success("Successfully Updated");
+        setTimeout(function () {
+            window.location.href = `Available.html`;
+        }, 1000);
+        
+        
+        
+    }).catch(err =>{
+        Toastr.error("error ")
+    });
 }

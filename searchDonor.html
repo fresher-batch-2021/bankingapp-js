@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
 
     <link rel="icon" href="image/donors-photo.jpg">
-    <!-- <link rel="stylesheet" href="css/searchdonor.css"> -->
+    
 
 </head>
+
 <body>
-     <!-- -------------------header starts------------- -->
+    <!-- -------------------header starts------------- -->
 
-     <header>
+    <header>
 
-        <nav class="topnav" aria-label="image"> 
+        <nav class="topnav" aria-label="image">
 
             <img src="image/BloodLogo.png" alt="image">
 
@@ -65,42 +72,52 @@
 
             <hr>
 
-            
-
             <div class="bloodtype">
-                <!-- <tr> -->
-                    <!-- <th> -->
-                        <label for="bloodGroup"><strong>BloodGroup</strong></label>
-                    <!-- </th> -->
-                <!-- <td> -->
-                    <select name="bloodGroup" id="searchDonor" required>
-                        <option value="">--select--</option>
-                        <option value="O+">O+</option>
-                        <option value="O-">O-</option>
-                        <option value="A+">A+</option>
-                        <option value="A-">A-</option>
-                        <option value="B+">B+</option>
-                        <option value="B-">B-</option>
-                        <option value="AB+">AB+</option>
-                        <option value="AB-">AB-</option>
-                    </select>
-                <!-- </td> -->
-                <!-- </tr> -->
+
+                <label for="bloodGroup"><strong>BloodGroup</strong></label>
+                <select name="bloodGroup" id="searchDonor" required>
+                    <option value="">--select--</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                </select>
+               
 
             </div>
 
             <div class="city">
 
                 <label for="city"><strong>City</strong></label>
-                <input type="city" name="city" id="city" placeholder="Enter City" required
-                autocomplete="off" autofocus> <br>
+
+                <select name="city" id="city" required>
+                    <option value="">--select--</option>
+                    <option value="Chennai ">Chennai</option>
+                    <option value="Coimbatore ">Coimbatore</option>
+                    <option value="Dindukal">Dindukal</option>
+                    <option value="Erode">Erode</option>
+                    <option value="Kancheepuram">Kancheepuram</option>
+                    <option value="Madurai ">Madurai</option>
+                    <option value="Nagarcoil">Nagarcoil</option>
+                    <option value="Pollachi">Pollachi</option>
+                    <option value="Ranipet">Ranipet</option>
+                    <option value="Salem">Salem</option>
+                    <option value="Tirunelveli">Tirunelveli</option>
+                    <option value="Thanjavur">Thanjavur</option>
+                    <option value="Vellore">Vellore</option>
+               
+                </select>
 
             </div>
 
-            
+
 
         </div>
-        <button class="login-button" onclick="searchDonor()" type="button" id="submit">Search</button>
+        <!-- <button class="login-button" onclick="searchDonor()" type="button" id="submit">Search</button> -->
     </form>
 
     <button onclick="searchDonor()">search</button>
@@ -110,4 +127,5 @@
     <script src="js/service/restService.js"></script>
     <script src="js/service/enviroment.js"></script>
 </body>
+
 </html>

@@ -2,10 +2,23 @@ function bloodRequest() {
 
     event.preventDefault();
 
-    var requestName = document.getElementById("name").value;
-    var requestBlood = document.getElementById("bloodGroup").value;
-    var requestPhoneNumber = document.getElementById("phoneNumber").value;
-    var requestBloodCity = document.getElementById("city").value;
+    // const requestName = $("#name").val;
+    // const requestBlood = $("#bloodGroup").val;
+    // const requestPhoneNumber = $("#phoneNumber").val;
+    // const requestBloodCity = $("#city").val;
+
+
+    const requestName = document.getElementById("name").value;
+    const requestBlood = document.getElementById("bloodGroup").value;
+    const requestPhoneNumber = document.getElementById("phoneNumber").value;
+    const requestBloodCity = document.getElementById("city").value;
+
+
+    try {
+
+        Validator.isValidString(name, "Name Cannot be Blank");
+        Validator.isValidMobile(phoneNumber, "Mobile Number Must Contain 10 Digits");
+
 
     let datas = {
         "name": requestName,
@@ -13,18 +26,14 @@ function bloodRequest() {
     }
     
 
-   
-
-   
-
     
-    if (requestName == "" || requestName == null) {
+    // if (requestName == "" || requestName == null) {
 
-        alert("Enter Your Name");
+    //     alert("Enter Your Name");
 
-        return false;
+    //     return false;
 
-    }
+    // }
 
     if (requestBlood == "Enter Blood Group" || requestBlood == null) {
 
@@ -34,13 +43,13 @@ function bloodRequest() {
 
     }
 
-    if(requestPhoneNumber == "" || requestPhoneNumber == null){
+    // if(requestPhoneNumber == "" || requestPhoneNumber == null){
 
-        alert("Enter Your Phone Number");
+    //     alert("Enter Your Phone Number");
 
-        return false;
+    //     return false;
 
-    }
+    // }
 
     if(requestBloodCity == "" || requestBloodCity == null){
 
@@ -52,12 +61,7 @@ function bloodRequest() {
 
     else {
 
-        // let url = "https://fffdcced-9a09-44ae-aa2f-e27add7efeb7-bluemix.cloudantnosqldb.appdomain.cloud/bloodbank-bloodrequest/";
-
-        // const dbusername = "apikey-v2-zyhv5j7i61imeby1qya0ma2ejrc0fkf9n4e4bl3w5gn";
-        //  const dbpassword = "ec6094ae0714dc7a5ffc50a86924bef3";
-
-        // const basicAuth = 'Basic ' + btoa(dbusername + ":" + dbpassword);
+        
          console.log(datas);
 
         let formData = {
@@ -79,9 +83,8 @@ function bloodRequest() {
 
 } catch (err) {
     console.error(err.message);
-    alert("Unable to Login");
     toastr.error(err.message);
-
+    toastr.error("Failed");
   }
 
 }

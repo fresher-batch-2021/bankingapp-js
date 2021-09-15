@@ -13,8 +13,14 @@ class Validator {
       }
     }
     static isValidPassword(input, message) {
-        this.isValidString(input,"password can't empty")
+        this.isValidString(input,"Password can't be Blank")
         if (input.length < 8 || input.length > 15) {
+          throw new Error(message);
+        }
+      }
+      static isValidMobile(input, message) {
+    
+        if (input.length != 10) {
           throw new Error(message);
         }
       }

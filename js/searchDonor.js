@@ -1,6 +1,9 @@
 function searchDonor(){
     event.preventDefault();
-    alert('hi');
+
+    // const bloodType=$("#name").val();
+    // const city=$("#city").val();
+   
    const bloodType= document.querySelector('#searchDonor').value;
    const city=document.querySelector('#city').value;
    
@@ -9,4 +12,3 @@ function searchDonor(){
    })  
 
 }
-// alert('ki')

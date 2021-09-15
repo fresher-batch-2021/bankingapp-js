@@ -15,9 +15,9 @@ function register() {
     const confirmPassword = document.querySelector("#confirmPassword").value;
 
 
-    // const userName=$("#userName").val();
+    // const userName=$("#name).val();
     // const email=$("#email").val();
-    // const userPassword=$("#userPassword").val();
+    // const userPassword=$("#password").val();
     // const confirmPassword=$("#confirmPassword").val();
 
     try {
