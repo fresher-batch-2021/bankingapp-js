@@ -89,6 +89,6 @@ function updateBloodDonor(id, rev) {
 
     }).catch(err => {
         // Toastr.error("error ")
-        toastr.error(Failed);
+        toastr.error(Failed)
     });
 }
