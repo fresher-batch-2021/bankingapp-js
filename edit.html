@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Blood Donor</title>
+    <link rel="stylesheet" href="css/View.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+
+</head>
+
+<body>
+
+    <!-- -------------------header starts------------- -->
+    <header>
+
+        <nav class="topnav" aria-label="image">
+
+            <img src="image/BloodLogo.png" alt="Image">
+
+            <nav class="search-container" aria-label="searchBar">
+
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit">Go</button>
+
+            </nav>
+
+        </nav>
+
+        <!-- -------------header ends--------------- -->
+
+        <nav class="header" aria-label="head">
+
+            <ul>
+
+                <ul>
+                    <a href="index.html">
+                        <li>HOME</li>
+                    </a>
+                    <a href="Login.html">
+                        <li>AVAILABLE</li>
+                    </a>
+                    <a href="Login.html">
+                        <li>DONATE BLOOD</li>
+                    </a>
+                    <a href="aboutus.html">
+                        <li>ABOUT US</li>
+                    </a>
+
+                </ul>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <section class="bill">
+
+
+        <div class="donorImage">
+        </div>
+
+        <div class="bill-details">
+            <table>
+
+
+                <tr>
+                    <th scope="col">Name : </th>
+                    <td><input type="text" id="name" readonly></td>
+                </tr>
+
+
+                <tr>
+                    <th scope="col">PhoneNumber : </th>
+                    <td><input type="number" id="phoneNumber"></td>
+                </tr>
+
+                <tr>
+                    <th scope="col">Blood Group : </th>
+                    <td><input type="text" id="bloodType" readonly></td>
+                </tr>
+
+                <tr>
+                    <th scope="col">City : </th>
+                    <td><input type="text" id="city"></td>
+                </tr>
+
+            </table>
+            <br>
+
+            <div id="btn"></div>
+
+
+        </div>
+    </section>
+
+    </div>
+
+    </div>
+
+    <div class="footer-dark">
+
+        <footer>
+
+            <div class="col item social">
+                <a href="https://www.facebook.com/"><em class="icon ion-social-facebook"></em></a>
+                <a href="https://twitter.com/?lang=en"><em class="icon ion-social-twitter"></em></a>
+                <a href="https://www.whatsapp.com/?lang=en"><em class="icon ion-social-whatsapp"></em></a>
+                <a href="https://www.instagram.com/"><em class="icon ion-social-instagram"></em></a>
+            </div>
+
+            <p class="copyright">Company Name © Blood Bank</p>
+
+        </footer>
+
+    </div>
+
+    <script src="js/edit.js"></script>
+    <script src="js/update.js"></script>
+    <script src="js/errorMessage.js"></script>
+</body>
+
+</html>

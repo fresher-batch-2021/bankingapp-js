@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <link rel="icon" href="image/donors-photo.jpg">
+    
+
+</head>
+
+<body>
+    <!-- -------------------header starts------------- -->
+
+    <header>
+
+        <nav class="topnav" aria-label="image">
+
+            <img src="image/BloodLogo.png" alt="image">
+
+            <nav class="search-container" aria-label="searchBar">
+
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit">Go</button>
+
+            </nav>
+
+        </nav>
+
+        <!-- -------------header ends--------------- -->
+
+        <nav class="header" aria-label="head">
+            <ul>
+                <a href="Available.html">
+                    <li>BLOOD DONORS</li>
+                </a>
+                <a href="bloodneed.html">
+                    <li>BLOOD NEED</li>
+                </a>
+                <a href="searchdonor.html">
+                    <li>SEARCH DONOR</li>
+                </a>
+                <a href="index.html">
+                    <li>LOG OUT</li>
+                </a>
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- --------------------- Common Fields----------------- -->
+
+    <form onsubmit="searchDonor()">
+
+        <div class="container">
+
+            <h2>Search Donor</h2>
+
+            <hr>
+
+            <div class="bloodtype">
+
+                <label for="bloodGroup"><strong>BloodGroup</strong></label>
+                <select name="bloodGroup" id="searchDonor" required>
+                    <option value="">--select--</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                </select>
+               
+
+            </div>
+
+            <div class="city">
+
+                <label for="city"><strong>City</strong></label>
+
+                <select name="city" id="city" required>
+                    <option value="">--select--</option>
+                    <option value="Chennai ">Chennai</option>
+                    <option value="Coimbatore ">Coimbatore</option>
+                    <option value="Dindukal">Dindukal</option>
+                    <option value="Erode">Erode</option>
+                    <option value="Kancheepuram">Kancheepuram</option>
+                    <option value="Madurai ">Madurai</option>
+                    <option value="Nagarcoil">Nagarcoil</option>
+                    <option value="Pollachi">Pollachi</option>
+                    <option value="Ranipet">Ranipet</option>
+                    <option value="Salem">Salem</option>
+                    <option value="Thirunelveli">Thirunelveli</option>
+                    <option value="Thanjavur">Thanjavur</option>
+                    <option value="Vellore">Vellore</option>
+               
+                </select>
+
+            </div>
+
+
+
+        </div>
+        <!-- <button class="login-button" onclick="searchDonor()" type="button" id="submit">Search</button> -->
+    </form>
+
+    <button onclick="searchDonor()">search</button>
+
+    <script src="js/searchDonor.js"></script>
+    <script src="js/errorMessage.js"></script>
+    <script src="js/service/donateBloodService.js"></script>
+    <script src="js/service/restService.js"></script>
+    <script src="js/service/enviroment.js"></script>
+</body>
+
+</html>
